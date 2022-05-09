@@ -14,7 +14,7 @@ public class IndexOfInteger {
             lastInput = scanner();
             if (lastInput != 0) {
                 if (intList.contains(lastInput)) {
-                    System.out.println("The integer " + lastInput + " can be found at index " + intList.indexOf(lastInput) + " on your list.");
+                    indexOf();
                 } else {
                     System.out.println("The integer you entered is not on your list.\nPlease try again.");
                 }
@@ -36,6 +36,14 @@ public class IndexOfInteger {
                 intList.add(lastInput);
             } else {
                 break;
+            }
+        }
+    }
+    public static void indexOf() {
+        for(int i = 0;i < intList.size();i++){
+            int value = intList.get(i);
+            if (lastInput == value) {
+                System.out.println("Your chosen integer of "+lastInput+" has an index of "+i);
             }
         }
     }
