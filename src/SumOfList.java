@@ -4,25 +4,13 @@ import java.util.Scanner;
 public class SumOfList {
     private static final ArrayList<Integer> intList = new ArrayList<>();
     private static Integer lastInput;
+    public static String list = "";
 
     public static void main(String[] args) {
         System.out.println("Please enter one integer per line and enter a '0' when done.");
         addList();
-        System.out.println("Your list contains: " + intList + ".\nThe sum of your list of integers is " + sum());
-        System.out.println("What number from your list would you like to find?\nEnter 0 to exit.");
-
-        while (true) {
-            lastInput = scanner();
-            if (lastInput != 0) {
-                if (intList.contains(lastInput)) {
-                    System.out.println("The integer " + lastInput + " can be found at index " + intList.indexOf(lastInput) + " on your list.");
-                } else {
-                    System.out.println("The integer you entered is not on your list.\nPlease try again.");
-                }
-            } else {
-                break;
-            }
-        }
+        listList();
+        System.out.println(list + " were the items in the list. The sum of that list is: " + sum()+".");
     }
 
     public static Integer scanner() {
@@ -47,5 +35,15 @@ public class SumOfList {
             sum += integer;
         }
         return sum;
+    }
+    public static void listList() {
+        for (int i = 0; i < intList.size();i++) {
+            if (i == intList.size() - 1) {
+                list += "and "+ intList.get(i);
+            } else {
+                list += intList.get(i)+", ";
+            }
+
+        }
     }
 }
